@@ -8,7 +8,7 @@ hidden-sector modular energy, for a mode at the centre of the ball.
 """
 import numpy as np
 
-from figstyle import (plt, BLUE, ORANGE, GREEN, BLACK, panel_label, finish)
+from figstyle import (plt, BLUE, ORANGE, BLACK, panel_label, finish)
 from analyses import C_X, h2_inv_upper
 
 NSTAR = 0.29382
