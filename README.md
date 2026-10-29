@@ -12,7 +12,6 @@ Each number in the paper is recomputed from the models below.
 ## Install
 
 ```bash
-python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -31,7 +30,8 @@ python check_numbers.py     # every number quoted in the text
 and ends with `ALL NUMBERS VERIFIED`. `make_all_figures.py` runs each figure
 script in its own process, so no figure inherits another one's Matplotlib
 settings; name a script to rebuild one figure, for example
-`python make_all_figures.py make_fig_gates.py`.
+`python make_all_figures.py make_fig_gates.py`. Each figure is written in the
+order it appears in the paper, Fig. 1 through Fig. 14.
 
 ## Models
 
@@ -44,25 +44,6 @@ settings; name a script to rebuild one figure, for example
 | `model2_data.py` | Stores and loads those results, `model2_results.csv` |
 | `robustness.py` | Matched-`T2` coupling sequences and the partitioned record channel |
 | `analyses.py` | Gate-form comparison, the budget-combination class, the dynamical future channel, the random-state test of the general floor, and the regime of the floor |
-
-## Figures
-
-| Figure | Script | Output |
-|---|---|---|
-| 1 | `make_fig0.py` | `fig_region.png` |
-| 2 | `make_fig_hidden.py` | `fig_hidden.png` |
-| 3 | `make_fig_general.py` | `fig_general.png` |
-| 4 | `make_fig_cobs.py` | `fig_cobs.png` |
-| 5 | `make_fig1.py` | `fig_budget.png` |
-| 6 | `make_fig_resid.py` | `fig_residual.png` |
-| 7 | `make_fig_combination.py` | `fig_combination.png` |
-| 8 | `make_fig5.py` | `fig_model2.png` |
-| 9 | `make_fig_qsl.py` | `fig_qsl.png` |
-| 10 | `make_fig4.py` | `fig_map.png` |
-| 11 | `make_fig_gates.py` | `fig_gates.png` |
-| 12 | `make_fig2.py` | `fig_mechanism.png` |
-| 13 | `make_fig_modular.py` | `fig_modular.png` |
-| 14 | `make_fig3.py` | `fig_structure.png` |
 
 `figstyle.py` holds the shared plotting style.
 
