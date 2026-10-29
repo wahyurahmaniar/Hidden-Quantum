@@ -1,6 +1,6 @@
 """Partition robustness of I_past and matched-T2 coupling-structure comparison."""
 import numpy as np
-from model_core import h2, couplings, channels, gate
+from model_core import h2, couplings, gate
 
 IMAX, DI, KAPPA = 3.0, 0.4, 1.0
 
