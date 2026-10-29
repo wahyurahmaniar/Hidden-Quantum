@@ -6,7 +6,6 @@ factor."""
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import numpy as np
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 
 BLUE, ORANGE, GREY, BLACK = "#0072B2", "#E69F00", "#8C8C8C", "#000000"
