@@ -10,7 +10,7 @@ of Eq. (10) and of the general floor of Corollary 3.
 import numpy as np
 from scipy.linalg import expm
 
-from figstyle import (plt, BLUE, ORANGE, GREEN, VERM, BLACK, panel_label,
+from figstyle import (plt, BLUE, ORANGE, GREEN, BLACK, panel_label,
                       finish)
 from analyses import C_X, vn_bits, h2_inv_upper
 from model_core import h2
