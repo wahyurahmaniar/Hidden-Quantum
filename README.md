@@ -42,7 +42,7 @@ order it appears in the paper, Fig. 1 through Fig. 14.
 | `model_xosc.py` | Hidden harmonic mode: branch overlap, hidden energy, Holevo information, energy-constrained capacity |
 | `model2.py`, `run_model2.py` | Interacting baths, one XX and two XXZ chains, by exact diagonalization |
 | `model2_data.py` | Stores and loads those results, `model2_results.csv` |
-| `robustness.py` | Matched-`T2` coupling sequences and the partitioned record channel |
+| `robustness.py` | Coupling sequences matched in dephasing time, and the partitioned record channel |
 | `analyses.py` | Gate-form comparison, the budget-combination class, the dynamical future channel, the random-state test of the general floor, and the regime of the floor |
 
 `figstyle.py` holds the shared plotting style.
@@ -61,11 +61,12 @@ returns them as a dictionary, and running the file prints them.
 
 ## Data
 
-`run_model2.py` writes `model2_results.csv`, the channels of the three bath
-Hamiltonians on a grid of 241 times, with the generator spread, `T2` and the
-orthogonalization time in its header. It also writes `model2_results.npz` as a
-local cache, which is not tracked. The whole run takes about twenty seconds, so
-the CSV can be deleted and regenerated at any time.
+`run_model2.py` writes `model2_results.csv`: the past, present, and future
+channels of the three bath Hamiltonians on a grid of 241 times. Its header
+carries the three numbers that are the same at every time, namely the spread
+of the generator that separates the two branches, the dephasing time, and the
+orthogonalization time. The whole run takes about twenty seconds, so the file
+can be deleted and regenerated at any time.
 
 ## License
 
