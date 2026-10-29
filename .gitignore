@@ -2,4 +2,4 @@ __pycache__/
 *.pyc
 venv/
 *.png
-*.npz
+!graphical_abstract.png
