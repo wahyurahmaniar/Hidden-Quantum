@@ -1,13 +1,11 @@
 """Loader for the interacting-bath results of Sec. 7.
 
 `run_model2.py` diagonalizes the three bath Hamiltonians, which takes about
-twenty seconds, and stores the channels it computes. The results live in a
-text file, `model2_results.csv`, so that they can be read and compared
-without NumPy; `.npz` is kept only as a fast local cache. `load()` returns a
-dictionary of arrays from whichever file is present, and runs the models if
-neither is.
+twenty seconds, and stores the channels it computes in `model2_results.csv`,
+a plain text file that can be read and compared without NumPy. `load()`
+returns a dictionary of arrays from that file, and runs the models if the
+file is absent.
 """
-import os
 import pathlib
 import subprocess
 import sys
@@ -15,11 +13,10 @@ import sys
 import numpy as np
 
 CSV = pathlib.Path("model2_results.csv")
-NPZ = pathlib.Path("model2_results.npz")
 
 
 def save(data):
-    """Write the results as CSV, one column per array, and as an npz cache."""
+    """Write the results as CSV, one column per array."""
     keys = [k for k in data if np.atleast_1d(data[k]).size > 1]
     scal = {k: float(data[k]) for k in data if np.atleast_1d(data[k]).size == 1}
     n = max(np.atleast_1d(data[k]).size for k in keys)
@@ -32,13 +29,10 @@ def save(data):
               + ",".join(keys))
     np.savetxt(CSV, np.column_stack(cols), delimiter=",", header=header,
                comments="", fmt="%.12g")
-    np.savez(NPZ, **data)
 
 
 def load():
     """The results as a dictionary of arrays, computing them if needed."""
-    if NPZ.exists():
-        return dict(np.load(NPZ))
     if not CSV.exists():
         subprocess.run([sys.executable, "run_model2.py"], check=True)
         return load()
