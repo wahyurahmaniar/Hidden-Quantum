@@ -1,13 +1,13 @@
 # Energy-constrained inaccessible degrees of freedom and quantum coherence in bounded systems
 
+![Graphical abstract](graphical_abstract.png)
+
 Code that reproduces every figure, table and quoted number of
 
 > W. Rahmaniar, *Energy-Constrained Inaccessible Degrees of Freedom and Quantum
-> Coherence in Bounded Systems*, Chinese Journal of Physics (manuscript
-> CJPHY-D-26-02599).
+> Coherence in Bounded Systems*, Chinese Journal of Physics.
 
-Everything is plain Python. No value is entered by hand: each number in the
-paper is recomputed from the models below.
+Each number in the paper is recomputed from the models below.
 
 ## Install
 
