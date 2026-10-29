@@ -2,7 +2,7 @@
 
 ![Graphical abstract](graphical_abstract.png)
 
-Code that reproduces every figure, table and quoted number of
+Code that reproduces every image, table, and figure in the following paper:
 
 > W. Rahmaniar, *Energy-Constrained Inaccessible Degrees of Freedom and Quantum
 > Coherence in Bounded Systems*, Chinese Journal of Physics.
